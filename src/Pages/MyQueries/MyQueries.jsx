@@ -1,6 +1,10 @@
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const MyQueries = () => {
-    const handleAddbtn = e =>{
+    const { user } = useContext(AuthContext);
+    const handleAddbtn = e => {
         e.preventDefault();
         const form = e.target;
         const productName = form.productName.value;
@@ -8,7 +12,20 @@ const MyQueries = () => {
         const queryTitle = form.queryTitle.value;
         const imgUrl = form.imgUrl.value;
         const boycottReason = form.boycottReason.value;
-        // console.log(productName, productBrand, queryTitle, imgUrl, boycottReason);
+        const email = user.email;
+        const name = user.displayName;
+        const recommendationCount = 0;
+        const dateTime = Date.now();
+        // console.log(dateTime);
+        // console.log(user);
+        const data = { productName, productBrand, queryTitle, imgUrl, boycottReason, email, name, dateTime, recommendationCount };
+        axios.post('http://localhost:3000/addProducts', data)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (
         <div className="max-w-7xl mx-auto mb-12">
@@ -34,7 +51,7 @@ const MyQueries = () => {
                         </label>
                     </div>
                     <div className="">
-                        <textarea className="textarea textarea-bordered h-24 w-full text-base" placeholder="Boycotting Reason" name="boycottReason"></textarea>
+                        <input name="boycottReason" type="text" placeholder="Boycotting Reason" className="input text-base input-bordered input-lg w-full pl-4 " />
                     </div>
                     <div className="flex justify-center">
                         <input className="btn text-center" type="submit" value="Add" />

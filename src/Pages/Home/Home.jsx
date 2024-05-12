@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Slider from '../../Components/Slider/Slider';
+import RecentQueries from '../../Components/RecentQueries/RecentQueries';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
                 <p className='text-5xl font-bold text-black'>Discover More: Explore All Queries</p>
                 <Link className='btn text-2xl'>Explore Now</Link>
             </div>
+            <RecentQueries></RecentQueries>
 
         </div>
     );
