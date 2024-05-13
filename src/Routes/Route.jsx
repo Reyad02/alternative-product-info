@@ -10,6 +10,7 @@ import CardDetails from "../Pages/MyQueries/CardDetails";
 import UpdateMyQuery from "../Pages/MyQueries/UpdateMyQuery";
 import Queries from "../Pages/Queries/Queries";
 import EachCardDetails from "../Pages/Queries/EachCardDetails";
+import MyRecommendations from "../Pages/MyRecommendations/MyRecommendations";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
                 path: "/cardDetail/:id",
                 element: <PrivateRoute><EachCardDetails /></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/myQueries/${params.id}`)
+            },
+            {
+                path: "/myRecommendations/",
+                element: <PrivateRoute><MyRecommendations /></PrivateRoute>,
+                // loader: ({ params }) => fetch(`http://localhost:3000/myQueries/${params.id}`)
             },
         ],
 

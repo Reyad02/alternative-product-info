@@ -17,7 +17,7 @@ const Queries = () => {
     return (
         <div className="max-w-7xl mx-auto mb-12">
             <div className="text-center">
-                <h2 className="text-5xl font-bold">Own Queries</h2>
+                <h2 className="text-5xl font-bold">Queries</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl mt-8">
                     {
                         loadedData.map(card => <QueriesCard key={card._id} cardData={card}  ></QueriesCard>)
