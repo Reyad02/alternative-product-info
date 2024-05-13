@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import AddQuery from "../Pages/AddQuery/AddQuery";
 import CardDetails from "../Pages/MyQueries/CardDetails";
 import UpdateMyQuery from "../Pages/MyQueries/UpdateMyQuery";
+import Queries from "../Pages/Queries/Queries";
+import EachCardDetails from "../Pages/Queries/EachCardDetails";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -36,12 +38,21 @@ const router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <PrivateRoute><CardDetails /></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:3000/myQueries/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/myQueries/${params.id}`)
             },
             {
                 path: "/details_update/:id",
                 element: <PrivateRoute><UpdateMyQuery /></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:3000/myQueries/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/myQueries/${params.id}`)
+            },
+            {
+                path: "/queries/",
+                element: <Queries></Queries>,
+            },
+            {
+                path: "/cardDetail/:id",
+                element: <PrivateRoute><EachCardDetails /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/myQueries/${params.id}`)
             },
         ],
 
