@@ -11,11 +11,13 @@ const MyQueries = () => {
         axios.get('http://localhost:3000/getData', {
             params: {
                 email: user?.email
-            }
-        }).then(response => {
-            // console.log(response.data);
-            setUserCards(response.data);
+            },
+            withCredentials: true
         })
+            .then(response => {
+                // console.log(response.data);
+                setUserCards(response.data);
+            })
             .catch(error => {
                 console.error('Error:', error);
             });
@@ -31,7 +33,7 @@ const MyQueries = () => {
                 <h2 className="text-5xl font-bold">Own Queries</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl mt-8">
                     {
-                        userCards.map(card => <MyCards key={card._id} cardData = {card} setUserCards={setUserCards} userCards={userCards} ></MyCards>)
+                        userCards.map(card => <MyCards key={card._id} cardData={card} setUserCards={setUserCards} userCards={userCards} ></MyCards>)
                     }
                 </div>
             </div>

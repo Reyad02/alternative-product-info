@@ -49,7 +49,8 @@ const MyRecommendations = () => {
         axios.get('http://localhost:3000/myRecommendations', {
             params: {
                 email: user?.email
-            }
+            },
+            withCredentials: true
         }).then(response => {
             console.log(response.data);
             setMyRecommendations(response.data);
