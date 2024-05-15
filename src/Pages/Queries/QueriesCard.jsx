@@ -6,7 +6,7 @@ const QueriesCard = ({ cardData }) => {
 
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img className="rounded-3xl " src={imgUrl} alt={productBrand} /></figure>
+            <figure className='h-full'><img className="rounded-3xl " src={imgUrl} alt={productBrand} /></figure>
             <div className="card-body gap-1 text-left ">
                 <h2 className="card-title">{queryTitle}</h2>
                 <p>{productName}</p>

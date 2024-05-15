@@ -30,7 +30,7 @@ const Navbar = () => {
     const toggleDarkMode = () => {
         const newMode = !isDarkMode;
         setDarkMode(newMode);
-        document.querySelector('html').setAttribute('data-theme', newMode ? "synthwave" : "light");
+        document.querySelector('html').setAttribute('data-theme', newMode ? "dracula" : "cupcake");
     }
     return (
         <div className='max-w-7xl mx-auto'>
@@ -44,7 +44,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl hidden md:flex">daisyUI</a>
+                    <Link to="/" className="btn btn-ghost text-xl hidden md:flex">TopTech</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex justify-center ">
                     <ul className="menu menu-horizontal px-1">
