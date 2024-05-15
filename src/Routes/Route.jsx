@@ -12,10 +12,12 @@ import Queries from "../Pages/Queries/Queries";
 import EachCardDetails from "../Pages/Queries/EachCardDetails";
 import MyRecommendations from "../Pages/MyRecommendations/MyRecommendations";
 import Recommendations from "../Pages/Recommendations/Recommendations";
+import Error from "../Error/Error";
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
