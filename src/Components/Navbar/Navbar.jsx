@@ -62,7 +62,7 @@ const Navbar = () => {
                     </div>
                     <div>
                         {
-                            (user && <a className="btn" onClick={handleLogout}>Logout</a>) || <Link to="/login">Login</Link>
+                            (user && <a className="btn" onClick={handleLogout}>Logout</a>) || <Link className='btn' to="/login">Login</Link>
                         }
                     </div>
                 </div>

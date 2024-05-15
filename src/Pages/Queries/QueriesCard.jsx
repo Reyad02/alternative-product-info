@@ -14,7 +14,6 @@ const QueriesCard = ({ cardData }) => {
                     <div className="p-2 px-4 rounded-full text-black absolute bg-[#7AB2B2] border-none outline-none top-0 right-0">
                         {productBrand}
                     </div>
-
                 </div>
             </figure>
             <div className="card-body gap-0">

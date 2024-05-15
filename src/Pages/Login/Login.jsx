@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from "firebase/auth";
+
 
 const Login = () => {
-    const { login } = useContext(AuthContext);
+    const { login, googleSignIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handleLogin = (e) => {
@@ -19,6 +22,29 @@ const Login = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage)
+            });
+    }
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+                navigate(location?.state ? location?.state : "/")
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
             });
     }
     return (
@@ -44,6 +70,11 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
+                <div className="flex text-3xl gap-4 justify-center ">
+                    <FaGoogle onClick={handleGoogleLogin} className="hover:cursor-pointer" />
+                    <FaGithub className="hover:cursor-pointer" />
+
+                </div>
                 <p className="text-center">If you don't have an account then <Link to="/signup" className="text-blue-500">Register</Link> first.</p>
             </div>
         </div>
