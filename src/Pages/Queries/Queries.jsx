@@ -60,7 +60,8 @@ const Queries = () => {
                     <button onClick={setLayout3} className="btn">Layout 3</button>
 
                 </div>
-                <div className={`grid ${(layout === 1 && 'grid-cols-1') || (layout === 2 && 'grid-cols-2') || 'grid-cols-3'} gap-16 mx-auto max-w-7xl mt-8 `}>
+                <p className="badge text-gray-400 my-2">Note: The Layout 2 and Layout 3 buttons are not applicable for mobile view due to the excessive shrinking of the cards.</p>
+                <div className={`grid ${(layout === 1 && 'grid-cols-1') || (layout === 2 && 'md:grid-cols-2') || 'md:grid-cols-3'} gap-16  mx-auto max-w-7xl mt-8 `}>
                     {
                         searchedQueries.map(card => <QueriesCard key={card._id} cardData={card} />)
                     }
