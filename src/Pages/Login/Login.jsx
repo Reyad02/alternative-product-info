@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
-    const { login, googleSignIn } = useContext(AuthContext);
+    const { login, googleSignIn, githubSignIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handleLogin = (e) => {
@@ -47,6 +47,31 @@ const Login = () => {
                 // ...
             });
     }
+    // const handleGithubLogin = () => {
+    //     githubSignIn()
+    //         .then((result) => {
+    //             // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+    //             const credential = GithubAuthProvider.credentialFromResult(result);
+    //             const token = credential.accessToken;
+
+    //             // The signed-in user info.
+    //             const user = result.user;
+    //             // IdP data available using getAdditionalUserInfo(result)
+    //             // ...
+    //             navigate(location?.state ? location?.state : "/")
+
+    //         }).catch((error) => {
+    //             // Handle Errors here.
+    //             const errorCode = error.code;
+    //             const errorMessage = error.message;
+    //             // The email of the user's account used.
+    //             const email = error.customData.email;
+    //             // The AuthCredential type that was used.
+    //             const credential = GithubAuthProvider.credentialFromError(error);
+    //             // ...
+    //         });
+
+    // }
     return (
         <div className="max-w-7xl mx-auto flex justify-center mb-8">
             <div className="card shrink-0 w-full max-w-sm py-10 shadow-2xl bg-base-100">
@@ -72,7 +97,7 @@ const Login = () => {
                 </form>
                 <div className="flex text-3xl gap-4 justify-center ">
                     <FaGoogle onClick={handleGoogleLogin} className="hover:cursor-pointer" />
-                    <FaGithub className="hover:cursor-pointer" />
+                    {/* <FaGithub onClick={handleGithubLogin} className="hover:cursor-pointer" /> */}
 
                 </div>
                 <p className="text-center">If you don't have an account then <Link to="/signup" className="text-blue-500">Register</Link> first.</p>

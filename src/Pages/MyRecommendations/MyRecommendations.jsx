@@ -76,12 +76,12 @@ const MyRecommendations = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            myRecommendations.map(myRecommendation => <tr key={myRecommendation._id}>
+                            myRecommendations.length > 0 ? myRecommendations.map(myRecommendation => <tr key={myRecommendation._id}>
                                 <th>{myRecommendation.RecommendProductName}</th>
                                 <td>{myRecommendation.productName}</td>
                                 <td>{myRecommendation.queryTitle}</td>
                                 <td><button className="btn" onClick={() => handleDelete(myRecommendation._id, myRecommendation.queryId)}>Delete</button></td>
-                            </tr>)
+                            </tr>): <tr className="text-3xl"><td>No Recommendation Found</td></tr>
                         }
                     </tbody>
                 </table>

@@ -32,12 +32,13 @@ const Recommendations = () => {
                     <tbody>
                         {/* row 1 */}
                         {
+                            recommendations.length> 0 ?
                             recommendations.map(myRecommendation => <tr key={myRecommendation._id}>
                                 <td>{myRecommendation.recommendedEmail}</td>
                                 <td>{myRecommendation.productName}</td>
-                                <th>{myRecommendation.RecommendProductName}</th>
+                                <td>{myRecommendation.RecommendProductName}</td>
                                 <td>{myRecommendation.RecommendReason}</td>
-                            </tr>)
+                            </tr>) : <tr className="text-3xl"><td>No Recommendation Found</td></tr>
                         }
                     </tbody>
                 </table>

@@ -32,8 +32,8 @@ const MyQueries = () => {
             <div className="text-center">
                 <h2 className="text-5xl font-bold">Own Queries</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl mt-8">
-                    {
-                        userCards.map(card => <MyCards key={card._id} cardData={card} setUserCards={setUserCards} userCards={userCards} ></MyCards>)
+                    {userCards.length > 0 ?
+                        userCards.map(card => <MyCards key={card._id} cardData={card} setUserCards={setUserCards} userCards={userCards} ></MyCards>) : <p className="text-3xl text-center">No Query Found</p>
                     }
                 </div>
             </div>
