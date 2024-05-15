@@ -27,7 +27,7 @@ const UpdateMyQuery = () => {
     }
     return (
         <div className="max-w-7xl mx-auto mb-12">
-            <div className="my-4 text-center rounded-md max-w-7xl py-4 space-y-4 mx-auto bg-gradient-to-r from-purple-400 to-pink-400">
+            <div className="my-4 text-center rounded-md max-w-7xl py-4 space-y-4 mx-auto bg-gradient-to-r from-[#CDE8E5] to-[#7AB2B2]">
                 <p className='text-5xl font-bold text-black'>Query Form</p>
             </div>
             <div>

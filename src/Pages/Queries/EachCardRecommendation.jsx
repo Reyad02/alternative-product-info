@@ -10,20 +10,6 @@ const EachCardRecommendation = ({ recommendation }) => {
     const dia = date.getDate();
     return (
         <div className="flex gap-8 items-center" key={recommendation._id}>
-            {/* <div className="flex items-center justify-center">
-                <img className="rounded-full w-10" src={user.photoURL || "https://www.w3schools.com/howto/img_avatar.png"} alt="" />
-            </div>
-            <div className="flex justify-around">
-                <div>
-                    <p className="font-semibold">{RecommendTitle}</p>
-                    <p>{RecommendProductName}</p>
-                    <p>{RecommendReason}</p>
-                </div>
-                <div>
-                    <img src={RecommendImgUrl} className="w-24 rounded-lg" alt="" />
-
-                </div>
-            </div> */}
             <div className="chat chat-start">
                 <div className="chat-image avatar">
                     <div className="w-10 rounded-full">
@@ -32,7 +18,6 @@ const EachCardRecommendation = ({ recommendation }) => {
                 </div>
                 <div className="chat-header">
                     {recommendedName || recommendedEmail}
-                    {/* <time className="text-xs opacity-50"> {dia+"/"+mes+"/"+year}</time> */}
                 </div>
                 <div className="chat-bubble">
                     <div>

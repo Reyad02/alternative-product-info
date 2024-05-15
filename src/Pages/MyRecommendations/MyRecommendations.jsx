@@ -63,14 +63,14 @@ const MyRecommendations = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table border">
                     {/* head */}
                     <thead>
                         <tr>
+                            <th>Brand Name</th>
+                            <th>Product Name</th>
+                            <th>Title</th>
                             <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
                         </tr>
                     </thead>
                     <tbody>

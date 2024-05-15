@@ -12,7 +12,7 @@ const Home = () => {
                 </label>
             </div> */}
             <Slider></Slider>
-            <div className="my-24 text-center rounded-md max-w-7xl py-4 space-y-4 mx-auto bg-gradient-to-r from-purple-400 to-pink-400">
+            <div className="my-24 text-center rounded-md max-w-7xl py-4 space-y-4 mx-auto bg-gradient-to-r from-[#CDE8E5] to-[#7AB2B2]">
                 <p className='text-5xl font-bold text-black'>Discover More: Explore All Queries</p>
                 <Link to="/queries" className='btn text-2xl'>Explore Now</Link>
             </div>
